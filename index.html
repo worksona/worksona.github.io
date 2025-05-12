@@ -191,9 +191,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+            align-items: stretch;
         }
 
         .demo-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
@@ -206,6 +210,7 @@
         }
 
         .demo-image {
+            flex-shrink: 0;
             height: 200px;
             background-color: #e2e8f0;
             display: flex;
@@ -216,6 +221,10 @@
         }
 
         .demo-content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             padding: 25px;
         }
 
@@ -228,6 +237,10 @@
         .demo-content p {
             color: #475569;
             margin-bottom: 20px;
+        }
+
+        .demo-content .button {
+            margin-top: auto;
         }
 
         /* Documentation section */
@@ -444,6 +457,14 @@
             <div class="section-title">
                 <h2>Interactive Demos</h2>
                 <p>See Worksona.js in action with these live examples</p>
+                <ul style="margin-top:24px; text-align:left; font-size:1.1em;">
+                  <li><a href="#demos">Multi-Agent Chatbot</a></li>
+                  <li><a href="#demos">PRD Generator</a></li>
+                  <li><a href="#demos">Document Processing Suite</a></li>
+                  <li><a href="#chained-image-analysis-demo">Chained Image Analysis Demo</a></li>
+                  <li><a href="#image-analysis-demo">Image Analysis Demo</a></li>
+                  <li><a href="#image-analysis-url-demo">Image Analysis URL Demo</a></li>
+                </ul>
             </div>
             <div class="demo-grid">
                 <div class="demo-card">
@@ -483,6 +504,48 @@
                         <h3>Document Processing Suite</h3>
                         <p>See how Worksona.js can power document analysis, extraction, and processing with specialized AI agents.</p>
                         <a href="docs/worksona-document-processor.html" class="button">View Demo</a>
+                    </div>
+                </div>
+                <a id="chained-image-analysis-demo"></a>
+                <div class="demo-card">
+                    <div class="demo-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#38bdf8" viewBox="0 0 16 16">
+                            <circle cx="8" cy="8" r="7" stroke="#0ea5e9" stroke-width="2" fill="#e0f2fe" />
+                            <path d="M4 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="#38bdf8" />
+                        </svg>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Chained Image Analysis Demo</h3>
+                        <p>Analyze an input image, generate a new image based on the analysis, and then analyze the generated image. Demonstrates chaining of vision and generation capabilities.</p>
+                        <a href="chained-image-analysis-demo.html" class="button">View Demo</a>
+                    </div>
+                </div>
+                <a id="image-analysis-demo"></a>
+                <div class="demo-card">
+                    <div class="demo-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a3e635" viewBox="0 0 16 16">
+                            <rect x="2" y="2" width="12" height="12" rx="3" fill="#d9f99d" stroke="#65a30d" stroke-width="2" />
+                            <circle cx="8" cy="8" r="3" fill="#a3e635" />
+                        </svg>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Image Analysis Demo</h3>
+                        <p>Generate an image from a prompt and then analyze it using the same agent. Showcases vision and analysis features.</p>
+                        <a href="image-analysis-demo.html" class="button">View Demo</a>
+                    </div>
+                </div>
+                <a id="image-analysis-url-demo"></a>
+                <div class="demo-card">
+                    <div class="demo-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#f472b6" viewBox="0 0 16 16">
+                            <rect x="2" y="2" width="12" height="12" rx="3" fill="#fce7f3" stroke="#be185d" stroke-width="2" />
+                            <path d="M5 8h6M8 5v6" stroke="#f472b6" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="demo-content">
+                        <h3>Image Analysis URL Demo</h3>
+                        <p>Analyze any image from a public URL using advanced vision models. Great for quick image insights and OCR.</p>
+                        <a href="image-analysis-URL-demo.html" class="button">View Demo</a>
                     </div>
                 </div>
             </div>

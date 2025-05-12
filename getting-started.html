@@ -355,10 +355,12 @@
             
             <h3>Resources</h3>
             <ul>
-                <li><a href="../index.html">Home</a></li>
                 <li><a href="worksona-chatbot-example.html">Chatbot Demo</a></li>
                 <li><a href="worksona-document-processor.html">Document Processor Demo</a></li>
                 <li><a href="prd-creator-app.html">PRD Generator Demo</a></li>
+                <li><a href="chained-image-analysis-demo.html">Chained Image Analysis Demo</a></li>
+                <li><a href="image-analysis-demo.html">Image Analysis Demo</a></li>
+                <li><a href="image-analysis-URL-demo.html">Image Analysis URL Demo</a></li>
                 <li><a href="https://github.com/worksona/worksona-js">GitHub</a></li>
             </ul>
         </nav>
@@ -495,7 +497,7 @@
         <p>You can also define your agents in JSON files and load them at runtime:</p>
         
         <pre><code><span class="comment">// Load an agent from a JSON file</span>
-<span class="keyword">const</span> response = <span class="keyword">await</span> fetch('agents/customer-support.json');
+<span class="keyword">const</span> response = <span class="keyword">await</span> fetch('docs/agents/customer-support.json');
 <span class="keyword">const</span> agentConfig = <span class="keyword">await</span> response.json();
 <span class="keyword">await</span> worksona.loadAgent(agentConfig);</code></pre>
 
@@ -764,6 +766,19 @@ console.log('Analysis:', analysis);
 const generatedImage = await worksona.generateImage('creative-agent', 'A futuristic cityscape at sunset');
 console.log('Generated Image URL:', generatedImage);
 </code></pre>
+
+        <div class="content">
+          <h1>Getting Started with Worksona.js</h1>
+          <p>Welcome! Below are interactive demos you can try right now:</p>
+          <ul>
+            <li><a href="worksona-chatbot-example.html">Multi-Agent Chatbot</a> – Interactive demo showcasing multiple AI agents with different personalities and expertise working in a chat interface.</li>
+            <li><a href="prd-creator-app.html">PRD Generator</a> – Step-by-step Product Requirements Document generator powered by Worksona.js agents.</li>
+            <li><a href="worksona-document-processor.html">Document Processing Suite</a> – See how Worksona.js can power document analysis, extraction, and processing with specialized AI agents.</li>
+            <li><a href="chained-image-analysis-demo.html">Chained Image Analysis Demo</a> – Analyze an input image, generate a new image based on the analysis, and then analyze the generated image. Demonstrates chaining of vision and generation capabilities.</li>
+            <li><a href="image-analysis-demo.html">Image Analysis Demo</a> – Generate an image from a prompt and then analyze it using the same agent. Showcases vision and analysis features.</li>
+            <li><a href="image-analysis-URL-demo.html">Image Analysis URL Demo</a> – Analyze any image from a public URL using advanced vision models. Great for quick image insights and OCR.</li>
+          </ul>
+        </div>
 
     </main>
 

@@ -844,28 +844,23 @@ Remember to:
                     let agentResponse = '';
                     try {
                         try {
-                            console.log('[Worksona] Attempting to load prd-editor-agent from ../agents/prd-editor-agent.json ...');
+                            console.log('[Worksona] Attempting to load prd-editor-agent from docs/agents/prd-editor-agent.json ...');
                             if (typeof worksona.loadAgentFromFile === 'function') {
                                 try {
-                                    await worksona.loadAgentFromFile('prd-editor-agent', '../agents/prd-editor-agent.json');
-                                    console.log('[Worksona] loadAgentFromFile success (../agents)');
+                                    await worksona.loadAgentFromFile('prd-editor-agent', 'docs/agents/prd-editor-agent.json');
+                                    console.log('[Worksona] loadAgentFromFile success (docs/agents)');
                                 } catch (err1) {
-                                    console.warn('[Worksona] Failed to load from ../agents/prd-editor-agent.json, trying ./agents/prd-editor-agent.json ...', err1);
-                                    await worksona.loadAgentFromFile('prd-editor-agent', './agents/prd-editor-agent.json');
-                                    console.log('[Worksona] loadAgentFromFile success (./agents)');
+                                    console.warn('[Worksona] Failed to load from docs/agents/prd-editor-agent.json', err1);
                                 }
                             } else {
                                 // Manual fallback if loadAgentFromFile is not available
                                 let agentDef = null;
                                 try {
-                                    const res = await fetch('../agents/prd-editor-agent.json');
+                                    const res = await fetch('docs/agents/prd-editor-agent.json');
                                     agentDef = await res.json();
-                                    console.log('[Worksona] Loaded agent definition (../agents):', agentDef);
+                                    console.log('[Worksona] Loaded agent definition (docs/agents):', agentDef);
                                 } catch (err1) {
-                                    console.warn('[Worksona] Failed to fetch ../agents/prd-editor-agent.json, trying ./agents/prd-editor-agent.json ...', err1);
-                                    const res2 = await fetch('./agents/prd-editor-agent.json');
-                                    agentDef = await res2.json();
-                                    console.log('[Worksona] Loaded agent definition (./agents):', agentDef);
+                                    console.warn('[Worksona] Failed to fetch docs/agents/prd-editor-agent.json', err1);
                                 }
                                 await worksona.loadAgent({
                                     id: 'prd-editor-agent',
